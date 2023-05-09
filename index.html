@@ -1,0 +1,209 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="fullName.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Sign Up Today</h1>
+
+      form....................
+      <form action="#" id="form">
+        <div id="form-group" class="form-group" method="POST">
+          <label for="fullname">Full Name:</label><br />
+          <input
+            type="text"
+            id="fullName"
+            placeholder="enter fullname"
+            value=""
+            name="fullname"
+            minlength="3"
+            maxlength="50"
+            required
+          />
+          <br />
+          <label for="phonenumber">Phone Number:</label><br />
+          <input
+            type="tel"
+            id="phonenumber"
+            placeholder="08168800815"
+            value=""
+            name="phonenumber"
+            maxlength="13"
+            required
+            pattern="[0-9]{11}"
+          />
+          <br />
+          <label for="email">Email:</label><br />
+          <input
+            type="email"
+            id="email"
+            placeholder="ogunmola@address.com"
+            value=""
+            name="email"
+            minlength="20"
+            maxlength="50"
+            required
+          />
+          <br />
+          <label for="website">Website:</label><br />
+          <input
+            type="url"
+            id="website"
+            placeholder="enter website"
+            value=""
+            name="website"
+            maxlength=""
+            required
+          />
+          <br />
+          <label for="password">Password:</label><br />
+          <input
+            type="password"
+            id="password1"
+            placeholder="enter password"
+            value=""
+            name="password"
+            minlength="8"
+            maxlength="13"
+            required
+            pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$"
+          />
+          <br />
+          <label for="password">Confirm Password:</label><br />
+          <input
+            type="password"
+            id="password2"
+            placeholder="confirm password"
+            value=""
+            name="password"
+            minlength="8"
+            maxlength="13"
+            required
+            pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$"
+            title="please use at 1 uppercase, lowercase and numbers"
+          />
+          <br />
+        </div>
+        <button type="submit" class="button">Submit</button>
+        <div class="error-message">
+          <h3 id="message">Good, you can proceed</h3>
+        </div>
+      </form>
+    </div>
+    <script src="index.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .flex-container {
+        display: flex;
+      }
+      .flex-container > div {
+        width: 46%;
+        margin: 0px 10px;
+      }
+      .html-form {
+        width: 46%;
+        background: #ffffff;
+        padding: 10px;
+        border: 1px solid #015ba9;
+      }
+      input[type="submit"] {
+        border: none;
+        background: #015ba9;
+        color: white;
+        padding: 5px 35px;
+        font-size: 20px;
+        position: relative;
+        left: 11px;
+      }
+      input[type="text"],
+      input[type="email"],
+      input[type="password"] {
+        width: 100%;
+        height: 20px;
+        background: white;
+        border: 1px solid lightgray;
+        margin: 5px 0px;
+        padding: 5px;
+      }
+      .html-form h3 {
+        text-align: center;
+        font-size: 25px;
+        margin: 0px;
+        margin-bottom: 5px;
+        color: #015ba9;
+        border-bottom: 1px solid;
+        margin-bottom: 15px;
+      }
+      #first-name-err,
+      #last-name-err,
+      #email-err,
+      #mobile-number-err,
+      #password-err,
+      #confirm-password-err {
+        color: red;
+        font-size: 13px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="html-form">
+      <h3>How to Validate Form Using JavaScript</h3>
+
+      <form method="post" id="registrationForm">
+        <div class="flex-container">
+          <div>
+            <input type="text" id="firstName" placeholder="First Name" />
+            <div id="first-name-err"></div>
+          </div>
+
+          <div>
+            <input type="text" id="lastName" placeholder="Last Name Name" />
+            <div id="last-name-err"></div>
+          </div>
+        </div>
+
+        <div class="flex-container">
+          <div>
+            <input type="email" id="emailAddress" placeholder="Email Address" />
+            <div id="email-err"></div>
+          </div>
+          <div>
+            <input type="text" id="mobileNumber" placeholder="Mobile Nubmer" />
+            <div id="mobile-number-err"></div>
+          </div>
+        </div>
+
+        <div class="flex-container">
+          <div>
+            <input type="password" id="password" placeholder="Password" />
+            <div id="password-err"></div>
+          </div>
+
+          <div>
+            <input
+              type="password"
+              id="confirmPassword"
+              placeholder="Confirm Password"
+            />
+            <div id="confirm-password-err"></div>
+          </div>
+        </div>
+
+        <input type="submit" />
+      </form>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
